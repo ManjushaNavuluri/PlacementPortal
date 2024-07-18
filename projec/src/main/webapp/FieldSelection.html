@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Add some basic styling */
+    
+body{
+    background-image: url('VVIT.png'); /* Replace 'your-background-image.jpg' with the actual image file path */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+  }
+  body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the body take up the full viewport height */
+  }
+
+  #myButton {
+    background-color: black; /* Set your desired background color */
+    color: white; /* Set text color */
+    padding: 5px 50px; /* Set padding to adjust button size */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 26px; /* Set font size */
+    cursor: pointer; /* Show pointer cursor on hover */
+  }
+  #year {
+  background-color: Aqua; /* Set your desired background color */
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 4px;
+  width: 150px; /* Set width as needed */
+  font-size:20px;
+}
+#branch {
+  background-color: Aqua; /* Set your desired background color */
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 4px;
+  width: 150px;
+  font-size:20px /* Set width as needed */
+}
+
+p{
+    font-size: 60px;
+    font-color:red;
+    color: aliceblue;
+    position: absolute; /* Position the heading absolutely */
+    top: 20px; /* Adjust the top value as needed to position the heading */
+    left: 50%; /* Center the heading horizontally */
+    transform: translateX(-50%); /* Center horizontally by moving it back by 50% of its own width */
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Adjust the margin as needed to separate from the heading */
+   
+  }
+
+   
+          
+  </style>
+</head>
+<body>
+<p>Select Details</p>
+
+ <form action="form0.jsp" class="dropbtn">
+  <select name="year" id="year" >
+   <option value="2018">2018</option>
+    <option value="2019">2019</option>
+  </select>
+  
+  <select name="branch" id="branch" class="dropbtn">
+    <option value="civil">IT</option>
+    <option value="ece">CIVIL</option>
+    <option value="eee">ECE</option>    
+    <option value="cse">EEE</option>
+    <option value="it">CSE</option>
+    <option value="mech">MECH</option>
+  </select>
+  <br><br>
+  <button id="myButton">Submit</button>
+</form>
+</body>
+</html>

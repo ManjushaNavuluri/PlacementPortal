@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Content</title>
+    <style>
+        body {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            background: linear-gradient(to left, #56d8e4, #9f01ea, #56d8e4, #9f01ea); 
+            color: #fff;
+            font-family: Arial, sans-serif;
+            animation: colorChange 5s infinite alternate; 
+        }
+        
+        @keyframes colorChange {
+            0% {
+                background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            }
+            50% {
+                background: -webkit-linear-gradient(right, #9f01ea, #56d8e4, #9f01ea, #56d8e4);
+            }
+            100% {
+                background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            }
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-decoration: none; 
+            color: #fff; 
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        table {
+            background-color: #56d8e4; 
+            color: #9f01ea;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+        }
+        
+        th {
+            background-color: #555; 
+        }
+        
+        tr:nth-child(even) {
+            background-color: #9f01ea;
+            color: #56d8e4; 
+        }
+        
+        #pie-chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .highlight {
+            text-align: left;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin-top: 20px;
+            background-color: #9f01ea; 
+        }
+
+        .highlight h3 {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 3px;
+          
+        }
+
+        .highlight ul {
+            margin-top: 5px;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .highlight li {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+         .placement-info {
+            text-align: center; 
+            margin-top: 20px; 
+        }
+         @keyframes marqueeAnimation {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+         marquee {
+            animation: marqueeAnimation 10s 10s linear infinite; 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="placement-info">
+            <h3>PLACEMENT INFORMATION</h3>
+            <b><p><marquee behavior="scroll" direction="left">View Important information about your placements here </marquee></p></b>
+                <p>Highest CTC:44 Lakhs Per Annum</p>
+                <p>40 Number of Companies</p>
+                <br>
+        </section>
+        <section class="past-three-years-info">
+            <h3>PLACEMENT DETAILS</h3>
+            <select id="year-select" onchange="showPlacementDetails()">
+                <option value="2022-2023">2022-2023</option>
+                <option value="2021-2022">2021-2022</option>
+                <option value="2020-2021">2020-2021</option>
+            </select>
+            <div id="placement-details" class="container">
+                <table id="placement-table" border="2">
+                    <tr>
+                        <th>S.NO</th>
+                        <th>COMPANY</th>
+                        <th>TOTAL SELECTED</th>
+                        <th>PACAKAGE</th>
+                    </tr>
+                </table>
+                <div id="pie-chart-container">
+                    <canvas id="placement-pie-chart" width="350" height="350"></canvas>
+                    <div id="highlight" class="highlight">
+                        <h3>Key Highlights:</h3>
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var placementData = {
+            '2022-2023': {
+                labels: ['Amazon WOW', 'VIRTUSA COE', 'INFOSYS-SE', 'TECH MAHINDRA', 'IBM', 'SALESFORCE', 'GOOGLE', 'APPLE', 'MICROSOFT'],
+                data: [2, 133, 108, 17, 1, 5, 20, 10, 15],
+                highlights: [
+                    'Amazon WOW and VIRTUSA COE have the highest number of selections.',
+                    'Most of the companies offer packages ranging from 4 to 15 lakhs per annum.'
+                ]
+            },
+            '2021-2022': {
+                labels: ['WALMART', 'WIPRO TURBO', 'TCS DIGITAL', 'CTS GEN C ELEVATE', 'INFYTQ-PP', 'PAYTM'],
+                data: [1, 109, 18, 105, 3, 4],
+                highlights: [
+                    'WIPRO TURBO and CTS GEN C ELEVATE have the highest number of selections.',
+                    'Most of the companies offer packages ranging from 3.6 to 9.25 lakhs per annum.'
+                ]
+            },
+            '2020-2021': {
+                labels: ['INFYTQ', 'TCS CODE VITA', 'INFOSYS', 'EPAM', 'ACCENTURE', 'HYUNDAI'],
+                data: [101, 31, 74, 13, 83, 3],
+                highlights: [
+                    'INFYTQ has the highest number of selections.',
+                    'Most of the companies offer packages ranging from' ,
+                     'INFYTQ has the highest number of selections.',
+                    'Most of the companies offer packages ranging from 3.6 to 7 lakhs per annum.',
+                ]
+            }
+        };
+
+        function showPlacementDetails() {
+            var selectedYear = document.getElementById('year-select').value;
+            var data = placementData[selectedYear];
+            var table = document.getElementById('placement-table');
+            var pieChart = document.getElementById('placement-pie-chart');
+            var highlight = document.getElementById('highlight');
+            
+            // Update table
+            var tableContent = '<tr><th>S.NO</th><th>COMPANY</th><th>TOTAL SELECTED</th><th>PACAKAGE</th></tr>';
+            for (var i = 0; i < data.labels.length; i++) {
+                tableContent += '<tr>';
+                tableContent += '<td>' + (i + 1) + '.</td>';
+                tableContent += '<td>' + data.labels[i] + '</td>';
+                tableContent += '<td>' + data.data[i] + '</td>';
+                tableContent += '<td>' + (i + 1) + 'LPA</td>'; // Dummy package value, replace with actual data
+                tableContent += '</tr>';
+            }
+            table.innerHTML = tableContent;
+
+            // Update pie chart
+            var ctx = pieChart.getContext('2d');
+            if (window.pieChartInstance) {
+                window.pieChartInstance.destroy();
+            }
+            window.pieChartInstance = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.data,
+                        backgroundColor: [
+                            '#ff6384',
+                            '#36a2eb',
+                            '#ffce56',
+                            '#33cc33',
+                            '#9900cc',
+                            '#ff9933',
+                            '#ff4500',
+                            '#8a2be2',
+                            '#ff1493'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false
+                }
+            });
+            var highlightContent = '';
+            data.highlights.forEach(function (highlight) {
+                highlightContent += '<li>' + highlight + '</li>';
+            });
+            highlight.querySelector('ul').innerHTML = highlightContent;
+        }
+        showPlacementDetails();
+    </script>
+</body>
+</html>

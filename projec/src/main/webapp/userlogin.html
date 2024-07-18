@@ -1,0 +1,146 @@
+user_login.html:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <style>
+        
+        .login-container{
+            background-color: #E6E6FA;
+            width: 500px;
+            height: 400px;
+            margin:0 auto;
+            display: block;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #E6E6FA;
+            margin-top: 200px;
+            padding: 0;
+            background-image: url('VVIT.png');
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 7px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .portal-heading{
+            font-size:3rem;
+        }
+        
+
+        .radio-container {
+            display: flex; 
+            margin-bottom: 2px;
+            text-align: center;
+            align-items: center; 
+        }
+
+        .radio-container label {
+            display: inline-flex; 
+            align-items: center; 
+            margin-right:-120px; 
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-login-container">
+        <header>
+            <h2 class="portal-heading">User Login</h2>
+            <form action="#" method="post" id="userLoginForm">
+                <label for="userUsername">Username:</label>
+                <input type="text" id="userUsername" name="userUsername" required>
+
+                <label for="userPassword">Password:</label>
+                <input type="password" id="userPassword" name="userPassword" required>
+
+                <input type="submit" value="Login">
+            </form>
+        </header>
+    </div>
+
+    <script>
+        document.getElementById("userLoginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting (for demonstration purposes)
+    
+            // Replace these with your actual user username and password
+            const userUsername = "user";
+            const userPassword = "user123";
+    
+            // Get the entered username and password from the form
+            const enteredUsername = document.getElementById("userUsername").value;
+            const enteredPassword = document.getElementById("userPassword").value;
+    
+            // Check if the entered username and password match the user credentials
+            if (enteredUsername === userUsername && enteredPassword === userPassword) {
+                // Redirect to the user dashboard (replace with your actual URL)
+                window.location.href = "user_dashboard.html";
+            } else {
+                // Display an error message (customize the error message as needed)
+                const errorMessage = document.createElement("p");
+                errorMessage.textContent = "Invalid username or password. Please try again.";
+                errorMessage.classList.add("error-message");
+                document.getElementById("userLoginForm").appendChild(errorMessage);
+            }
+        });
+    </script>
+</body>
+</html>

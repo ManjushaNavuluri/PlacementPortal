@@ -1,0 +1,19 @@
+@charset "UTF-8";
+ body {
+    background-image: url('VVIT.png'); /* Replace 'your-background-image.jpg' with the actual image file path */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    color:white;  
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the body take up the full viewport height */
+  }
+  b{
+  font-size:80px;
+  color:white;
+  }

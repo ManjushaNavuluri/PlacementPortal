@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Settings</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+button{
+display:block;
+margin:0 auto;
+}
+</style>
+</head>
+<body>
+    <main>
+        <section class="settings">
+            <h2>Account Settings</h2>
+            <form>
+                <!-- Change Password -->
+                <div class="settings-section">
+                    <h3>Change Password</h3>
+                    <label for="currentPassword">Current Password:</label>
+                    <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter your current password" required><br>
+
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Enter your new password" required><br>
+
+                    <label for="confirmNewPassword">Confirm New Password:</label>
+                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm your new password" required><br>
+                </div>
+                
+                <!-- Email Notifications -->
+                <div class="settings-section">
+                    <h3>Email Notifications</h3>
+                    <p>Receive email notifications for:</p>
+                    <label>
+                        <input type="checkbox" name="jobNotifications" value="jobNotifications"> New Job Postings<br>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="applicationStatusNotifications" value="applicationStatusNotifications"> Application Status Updates<br>
+                    </label>
+                </div>
+                
+                <!-- Delete Account -->
+                <div class="settings-section">
+                    <h3>Delete Account</h3>
+                    <p>Warning: Deleting your account will permanently remove all your data.</p>
+                    <button type="button" onclick="confirmDelete()">Delete My Account</button><br>
+                </div>
+                
+                <button type="submit">Save Settings</button>
+            </form>
+        </section>
+    </main>
+    <script>
+         function confirmDelete() {
+            if (confirm("Are you sure you want to delete your account? This action is irreversible.")) {
+                // Implement account deletion logic here
+                alert("Account deleted successfully.");
+                // Redirect to the login page or perform other actions
+            }
+        }
+    </script>
+</body>
+</html>

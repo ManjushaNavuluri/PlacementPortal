@@ -1,0 +1,330 @@
+body, h1, h2, h3, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    margin-top: 100px;
+}
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #d26666fe; /* Adjust the color to match your theme */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.login-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+#logo {
+    width: 170px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+    background-image: url('vvitlogo.png');
+    background-size: cover;
+}
+header h1 {
+    font-size: 2rem;
+}
+
+.dropdown-content{
+    position: absolute;
+    background-color: #fff;
+    text-align: left;
+}
+
+.job-listings {
+    padding: 1rem;
+}
+
+.job {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.job h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.apply-button {
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.apply-button:hover {
+    background-color: #00578e;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    
+    z-index: 1;
+    background-image: url('drop1.webp');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dashboard{
+font-size:3rem;
+}
+
+.portal-heading{
+font-size:5rem;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.student-profile h2 {
+    text-align: center;
+}
+.student-profile button {
+    margin-top: auto;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    width: 80%;
+    height: 8cap;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front {
+   
+    color: #fffdfd; 
+    font-size: 20px;
+}
+
+.flip-card-back {
+
+    color: #fffdfd; 
+    transform: rotateY(180deg);
+}
+.flip-card-back button {
+    margin-bottom: 10px; /* Add margin to create space between buttons */
+}
+.left-card {
+    display: flex;
+    flex-direction:row; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: absolute;
+    left: 90%; /* Place the card horizontally in the middle */
+    top: 80%; /* Place the card vertically in the middle */
+    transform: translate(-50%, -50%); /* Center the card precisely */
+    
+    
+}
+.right-card {
+    display: flex;
+    flex-direction:column; /* Place cards side by side */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    justify-content: space-between;
+    margin: 0 auto;
+    position:absolute;
+    right:90%;
+    top:60%;
+    transform: translate(-50%, -50%); 
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    background-image: url('VVIT.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: #d26666fe;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav {
+    display: block;
+    background-color: #fb9494;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #fff;
+    text-align: left;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front {
+    color: #fffdfd;
+    font-size: 20px;
+}
+
+.flip-card-back {
+    color: #fffdfd;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back button {
+    margin-bottom: 10px;
+}
+
+.left-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: absolute;
+    left: 90%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.right-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: absolute;
+    right: 90%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.flip-card {
+    width: 48%;
+    height: 80px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

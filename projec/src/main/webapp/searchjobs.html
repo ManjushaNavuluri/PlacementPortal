@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Search Jobs</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+button{
+display:block;
+margin:0 auto;
+}
+</style>
+</head>
+<body>
+<main>
+<section class="search-jobs">
+<h2>Search Jobs</h2>
+<form>
+    <br>
+<label for="jobTitle">Job Title:</label>
+<input type="text" id="jobTitle" name="jobTitle" placeholder="Enter job title"><br><br>
+<label for="location">Location:</label>
+<input type="text" id="location" name="location" placeholder="Enter location"><br><br>
+<label for="category">Category:</label>
+<select id="category" name="category">
+<option value="all">All Categories</option>
+<option value="it">IT</option>
+<option value="finance">Finance</option>
+<option value="business">Business</option>
+<option value="transportation">Transportation</option>
+<option value="it">Science</option>
+<option value="lawnforcement">Law Enforcement</option>
+<option value="hospitality">Hospitality</option>
+<option value="healthcare">Health care</option>
+<option value="education">Education</option>
+<option value="communications">Communications</option>
+<option value="iArts">Arts</option>
+<!--add more categories here-->
+</select><br><br>
+<label for="jobType">Job Type:</label>
+<select id="jobType" name="jobType">
+    <option value="fullTime">Full-Time</option>
+    <option value="partTime">Part-Time</option>
+    <option value="internship">Internship</option>
+</select>
+<button type="submit">Search</button>
+</form>
+<!--job listings displayed here-->
+</section>
+</main>
+</body>
+</html>
