@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Number Submission</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#042344, #333);
+            background-size: 100%;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            overflow: hidden; 
+            transition: all 0.3s ease-in-out;
+
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .container:hover::before {
+            opacity: 0.25;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            z-index: 1;
+            position: relative;
+        }
+        .box div{
+            position:absolute;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            border: 6px solid rgba(255, 255, 255, 0.8);
+        }
+        .box div:nth-child(1){
+            top: 12%;
+            left: 42%;
+            animation: animate 10s linear infinite;
+        }
+        .box div:nth-child(2){
+            top: 70%;
+            left: 50%;
+            animation: animate 7s linear infinite;
+        }
+        .box div:nth-child(3){
+            top: 17%;
+            left: 6%;
+            animation: animate 9s linear infinite;
+        }
+        .box div:nth-child(4){
+            top: 20%;
+            left: 60%;
+            animation: animate 10s linear infinite;
+        }
+        .box div:nth-child(5){
+            top: 67%;
+            left: 10%;
+            animation: animate 6s linear infinite;
+        }
+        .box div:nth-child(6){
+            top: 80%;
+            left: 70%;
+            animation: animate 12s linear infinite;
+        }
+        .box div:nth-child(7){
+            top: 60%;
+            left: 80%;
+            animation: animate 15s linear infinite;
+        }
+        .box div:nth-child(8){
+            top: 32%;
+            left: 25%;
+            animation: animate 16s linear infinite;
+        }
+        .box div:nth-child(9){
+            top: 90%;
+            left: 25%;
+            animation: animate 9s linear infinite;
+        }
+        .box div:nth-child(10){
+            top: 20%;
+            left: 80%;
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate{
+            0%{
+                transform: scale(0) translateY(0) rotate(0);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(1.0) translateY(-90px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+        }
+        input[type="submit"] {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            z-index: 1;
+            position: relative;
+            transition: background 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container">
+        <h1>Roll Number</h1>
+        <form action="eplit18.jsp" method="get">
+                    <input type="text" placeholder="" id="rno" name="rno">
+                <input type="submit" value="submit" class="btns">
+            </form>
+    </div>
+</body>
+</html>

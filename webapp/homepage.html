@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+        <h1 class="portal-heading">Placement Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="dashboard.html" target="-blank">Dashboard</a></li>
+                <li><a href="careerCompass.html" target="_blank">Career Compass</a></li>
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+                <li><a href="about.html" target="_blank">About Us</a></li>
+            </ul>
+        </nav>
+</header>
+<script>
+function toggleDropDown(dropdownId){
+var dropdown=document.getElementById(dropdownId);
+if(dropdown.style.display==="block"){
+dropdown.style.display="none";
+}else{
+dropdown.style.display="block";
+}
+}
+window.addEventListener('DOMContentLoaded', function () {
+            var dashboardContentContainer = document.getElementById('dashboard-content-container');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'dashboard-content.html', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    dashboardContentContainer.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        });
+// List of image URLs
+var images = [
+    'image2.jpg',
+    'image8.jpg',
+    'image6.jpeg',
+    'image10.jpg',
+    'image11.jpg',
+    'image9.jpg'
+];
+
+var currentIndex = 0;
+var backgroundElement = document.body;
+
+// Function to change background image
+function changeBackground() {
+    backgroundElement.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+    currentIndex = (currentIndex + 1) % images.length;
+}
+changeBackground();
+setInterval(changeBackground, 5000);
+</script>
+</body>
+</html> 	

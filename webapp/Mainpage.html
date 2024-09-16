@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Placement Portal</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #f0f0f0; /* Fallback color */
+  }
+  .background-image {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Push the image behind other content */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+  }
+  .header {
+    margin-top: 0px;
+    padding: 1px ;
+  }
+  .header img {
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  .navbar {
+    padding: 1rem 0;
+	margin-top:0px;
+    overflow: hidden;
+    background-color: #000;
+  }
+  .navbar a {
+    padding:1px;
+	font-size:20px;
+    display: block;
+    color: #FF007F;
+    text-align: center;
+    padding: 5px 20px;
+    text-decoration: none;
+  }
+  .navbar a:hover {
+    background-color: #B53389;
+    color: black;
+  }
+  .login {
+    float: right;
+  }
+  .register {
+    float: right;
+    margin-right: 20px;
+  }
+</style>
+</head>
+<body>
+  <img src="home.jpg" alt="Background Image" class="background-image"> <!-- Add your background image path here -->
+  <div class="header">
+    <img src="head.jpg" alt="Heading Image"> <!-- Add your heading image path here -->
+  </div>
+  <div class="navbar">
+  <div class="login">
+    <a href="login.html">Login</a>
+  </div>
+</body>
+</html>

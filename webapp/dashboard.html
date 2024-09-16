@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Content</title>
+    <style>
+        body {
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            background: linear-gradient(to left, #56d8e4, #9f01ea, #56d8e4, #9f01ea); 
+            color: #fff;
+            font-family: Arial, sans-serif;
+            animation: colorChange 5s infinite alternate; 
+        }
+        
+        @keyframes colorChange {
+            0% {
+                background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            }
+            50% {
+                background: -webkit-linear-gradient(right, #9f01ea, #56d8e4, #9f01ea, #56d8e4);
+            }
+            100% {
+                background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            }
+        }
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-decoration: none; 
+            color: #fff; 
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two-column layout */
+            gap: 20px;
+            align-items: start;
+            margin-top: 20px;
+        }
+        
+        table {
+            background-color: #56d8e4; 
+            color: #9f01ea;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+        }
+        
+        th {
+            background-color: #555; 
+        }
+        
+        tr:nth-child(even) {
+            background-color: #9f01ea;
+            color: #56d8e4; 
+        }
+        
+        #pie-chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #placement-pie-chart {
+            width: 350px; /* Adjusted size */
+            height: 350px; /* Adjusted size */
+        }
+
+        .highlight {
+            text-align: left;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin-top: 20px;
+            background-color: #9f01ea; 
+            width: 350px; /* Adjusted width */
+        }
+
+        .highlight h3 {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: 0; /* Remove margin-top to align properly */
+        }
+
+        .highlight ul {
+            margin-top: 5px;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .highlight li {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .placement-info {
+            text-align: center; 
+            margin-top: 20px; 
+        }
+
+        @keyframes marqueeAnimation {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        marquee {
+            animation: marqueeAnimation linear infinite; 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="placement-info">
+            <h3>PLACEMENT INFORMATION</h3>
+            <b><p><marquee behavior="scroll" direction="left">View Important information about your placements here </marquee></p></b>
+                <p>Highest CTC: 44 Lakhs Per Annum</p>
+                <p>40 Number of Companies</p>
+                <br>
+        </section>
+        <section class="past-three-years-info">
+            <h3>PLACEMENT DETAILS</h3>
+            <select id="year-select" onchange="fetchAndShowPlacementDetails()">
+                <option value="2022-2023">2022-2023</option>
+                <option value="2021-2022">2021-2022</option>
+                <option value="2020-2021">2020-2021</option>
+            </select>
+            <div id="placement-details" class="container">
+                <div>
+                    <table id="placement-table" border="2">
+                        <tr>
+                            <th>S.NO</th>
+                            <th>COMPANY</th>
+                            <th>TOTAL SELECTED</th>
+                            <th>PACKAGE</th>
+                        </tr>
+                    </table>
+                </div>
+                <div id="pie-chart-container">
+                    <canvas id="placement-pie-chart"></canvas>
+                    <div id="highlight" class="highlight">
+                        <h3>Key Highlights:</h3>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        async function fetchAndShowPlacementDetails() {
+            var selectedYear = document.getElementById('year-select').value;
+            try {
+                var response = await fetch('fetchPlacementData.jsp?year=' + selectedYear);
+                if (!response.ok) throw new Error('Network response was not ok');
+                var data = await response.text();
+                
+                // Inject the fetched HTML into the table
+                var table = document.getElementById('placement-table');
+                table.innerHTML = data;
+                
+                // Update pie chart
+                var placementData = [];
+                var companies = [];
+                var rows = table.querySelectorAll('tbody tr');
+                rows.forEach((row, index) => {
+                    if (index > 0) { // Skip header row
+                        var cells = row.querySelectorAll('td');
+                        companies.push(cells[1].innerText);
+                        placementData.push(parseInt(cells[2].innerText));
+                    }
+                });
+
+                var ctx = document.getElementById('placement-pie-chart').getContext('2d');
+                if (window.pieChartInstance) {
+                    window.pieChartInstance.destroy();
+                }
+                window.pieChartInstance = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: companies,
+                        datasets: [{
+                            data: placementData,
+                            backgroundColor: [
+                                '#ff6384', '#36a2eb', '#ffce56', '#33cc33', '#9900cc', 
+                                '#ff9933', '#ff4500', '#8a2be2', '#ff1493'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                        maintainAspectRatio: false
+                    }
+                });
+
+                // Update highlights
+                var highlight = document.getElementById('highlight');
+                var highlightContent = '';
+                highlightContent += '<li>' + 'Number of companies: ' + placementData.length + '</li>';
+                highlightContent += '<li>' + 'Highest package: ' + Math.max(...placementData) + ' LPA</li>';
+                highlight.querySelector('ul').innerHTML = highlightContent;
+
+            } catch (error) {
+                console.error('Error fetching placement details:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchAndShowPlacementDetails);
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+body 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #9f01ea;
+}
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section::before 
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate 
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span 
+{
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #000;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover 
+{
+  background: #9f01ea;
+  transition: 0s;
+}
+
+section .signin
+{
+  position: absolute;
+  width: 400px;
+  background: #000;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .signin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .signin .content h2 
+{
+  font-size: 2em;
+  color: #9f01ea;
+  text-transform: uppercase;
+}
+section .signin .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .signin .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #56d8e4;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.signin .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.signin .content .form .links a 
+{
+  color: #fff;
+  text-decoration: none;
+}
+.signin .content .form .links a:nth-child(2)
+{
+  color: #9f01ea;
+  font-weight: 800;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+  padding: 15px 100px;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  color: white;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  align-items:center;
+  display:flex;
+  justify-content:center;
+
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+  section span 
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+}
+@media (max-width: 600px)
+{
+  section span 
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+}
+  .text {
+    color: white;
+    position: absolute;
+    transition: opacity 0ms;
+    user-select: none;
+    -moz-user-select: none;
+  }
+  .fingerprint {
+    /* height: 80px; */
+    left: -8px;
+    opacity: 0;
+    position: absolute;
+    stroke: #777;
+    top: -9px;
+    transition: opacity 1ms;
+    background:#000;
+  }
+  .fingerprint-active {
+    stroke: #fff;
+  }
+  .fingerprint-out {
+    opacity: 1;
+  }
+  .odd {
+    stroke-dasharray: 0px 50px;
+    stroke-dashoffset: 1px;
+    transition: stroke-dasharray 1ms;
+  }
+  .even {
+    stroke-dasharray: 50px 50px;
+    stroke-dashoffset: -41px;
+    transition: stroke-dashoffset 1ms;
+  }
+  .ok {
+    opacity: 0;
+  }
+  .active.container {
+    animation: 6s Container;
+  }
+  .active .text {
+    opacity: 0;
+    animation: 6s Text forwards;
+  }
+  .active .fingerprint {
+    opacity: 1;
+    transition: opacity 300ms 200ms;
+  }
+  .active .fingerprint-base .odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 800ms 100ms;
+  }
+  .active .fingerprint-base .even {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 800ms;
+  }
+  .active .fingerprint-active .odd {
+    stroke-dasharray: 50px 50px;
+    transition: stroke-dasharray 2000ms 1500ms;
+  }
+  .active .fingerprint-active .even {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 2000ms 1300ms;
+  }
+  .active .fingerprint-out {
+    opacity: 0;
+    transition: opacity 300ms 4100ms;
+  }
+  .active .ok {
+    opacity: 1;
+    animation: 6s Ok forwards;
+  }
+  @keyframes Container {
+    0% { width: 200px }
+    6% { width: 80px }
+    71% { transform: scale(1); }
+    75% { transform: scale(1.2); }
+    77% { transform: scale(1); }
+  
+    94% { width: 80px }
+    100% { width: 200px }
+  }
+  @keyframes Text {
+    0% { opacity: 1; transform: scale(1); }
+    6% { opacity: 0; transform: scale(0.5); }
+  
+    94% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes Ok {
+    0% { opacity: 0 }
+    70% { opacity: 0; transform: scale(0); }
+    75% { opacity: 1; transform: scale(1.1); }
+    77% { opacity: 1; transform: scale(1); }
+    92% { opacity: 1; transform: scale(1); }
+    96% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 0 }
+  }
+
+.label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+
+
+
+

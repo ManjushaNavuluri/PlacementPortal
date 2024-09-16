@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Portal</title>
+    <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+<header>
+    
+
+    
+    <div></div>
+        <h1 class="portal-heading">Placement Portal</h1>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="javascript.void(0);" onclick="toggleDropDown('homeDropDown')">Home</a>
+                    <div id="homeDropDown" class="dropdown-content">
+                        <a href="dashboard.html" target="-blank">Dashboard</a>
+                        <a href="settings.html" target="-blank">Settings</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript.void(0);" onclick="toggleDropDown('jobsDropDown')">Jobs</a>
+                    <div id="jobsDropDown" class="dropdown-content">
+                        <a href="searchjobs.html" target="_blank">Search Jobs</a>
+                        <a href="myapps.html" target="_blank">My Applications</a>
+                        <a href="joblistings.html" target="_blank">Job Listings</a>
+                    </div>
+                </li>
+               <li class="dropdown">
+                    <a href="profile.html" target="_blank">Profile</a>
+                    <div id="profileDropDown" class="dropdown-content">
+                    </div>
+               </li>
+                <li><a href="login.html" target="_blank">Login</a></li>
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </nav>
+</header>
+<script>
+function toggleDropDown(dropdownId){
+var dropdown=document.getElementById(dropdownId);
+if(dropdown.style.display==="block"){
+dropdown.style.display="none";
+}else{
+dropdown.style.display="block";
+}
+}
+window.addEventListener('DOMContentLoaded', function () {
+            var dashboardContentContainer = document.getElementById('dashboard-content-container');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'dashboard-content.html', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    dashboardContentContainer.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        });
+// List of image URLs
+var images = [
+    'image2.jpg',
+    'image8.jpg',
+    'image6.jpeg',
+    'image10.jpg',
+    'image11.jpg',
+    'image9.jpg'
+];
+
+var currentIndex = 0;
+var backgroundElement = document.body;
+
+// Function to change background image
+function changeBackground() {
+    backgroundElement.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Call the function initially
+changeBackground();
+
+// Change background every 5 seconds
+setInterval(changeBackground, 5000);
+</script>
+</body>
+</html> 	

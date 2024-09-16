@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .ag-format-container {
+    width: 1142px;
+    margin: 0 auto;
+  }
+  
+  
+  body {
+    background-color:black;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+/* stylesheet.css */
+
+/* Style for buttons */
+ .A{
+    padding: 20px 90px; /* Adjust padding as needed */
+    background-color:#E11584; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    margin-top: 10px; /* Add space between buttons and content */
+}
+
+/* Hover effect */
+.A:hover {
+    background-color: #952aff; /* Darker background color on hover */
+}
+.B{
+    padding: 20px 90px; /* Adjust padding as needed */
+    background-color:#952aff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    margin-top: 10px; /* Add space between buttons and content */
+}
+
+/* Hover effect */
+.B:hover {
+    background-color: #FE036A; /* Darker background color on hover */
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+
+  .ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px 0px;
+  }
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+  
+    margin: 0 15px 30px;
+  
+    overflow: hidden;
+  
+    border-radius: 30px;
+  }
+  .ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #121212;
+  
+    overflow: hidden;
+  
+    position: relative;
+  }
+  
+  .ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+  }
+  .ag-courses-item_title {
+    min-height: 150px;
+    margin: 0 0 25px;
+  
+    overflow: hidden;
+  
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-courses-item_date-box {
+    font-size: 18px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-courses-item_date {
+    font-weight: bold;
+    color: #FE036A;
+  
+    
+  }
+  .ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #FE036A;
+  
+    z-index: 1;
+    position: absolute;
+    top: -55px;
+    right: -55px;
+  
+    border-radius: 50%;
+  
+    
+  }
+  .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #710193;
+  }
+  .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #FE036A;
+  }
+  .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+    background-color: #952aff;
+  }
+  
+  
+  
+  @media only screen and (max-width: 979px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: calc(50% - 30px);
+      flex-basis: calc(50% - 30px);
+    }
+    .ag-courses-item_title {
+      font-size: 24px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ag-format-container {
+      width: 96%;
+    }
+  
+  }
+  @media only screen and (max-width: 639px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+    .ag-courses-item_title {
+      min-height: 72px;
+      line-height: 1;
+      
+      font-size: 24px;
+    }
+    .ag-courses-item_link {
+      padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+      font-size: 16px;
+    }
+  }
+    </style>
+</head>
+<body>
+    <div class="ag-format-container">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+              <div class="ag-courses-item_title">
+                PERSONAL DETAILS&#160;</br></br>
+				 <button class="A" onclick="location.href='groupedpersonal.html';">GROUPED DATA</button> <!-- Added button --></br></br>
+				 <button class="A" onclick="location.href='indiper.html';">INDIVIDUAL DATA</button>
+              </div>
+              <div class="ag-courses-item_date-box">
+                </div> </a>
+                
+          </div>
+          <div class="ag-courses_item">
+            <a href="#" class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
+      
+              <div class="ag-courses-item_title">
+                PLACEMENT DETAILS&#160; </br>
+				<button class="B" onclick="location.href='groupedplamenet.html';">GROUPED DATA</button> <!-- Added button --></br></br>
+				<button class="B" onclick="location.href='viewedit.html';">INDIVIDUAL DATA</button> <!-- Added button -->
+              </div>
+      
+              <div class="ag-courses-item_date-box">
+                 </div></a>
+          </div>
+           <div class="ag-courses_item">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">
+            FUTURE PATHWAYS<br><br>
+            <button class="A" onclick="location.href='higher.jsp';">HIGHER STUDIES</button><br><br>
+            <button class="A" onclick="location.href='enter.jsp';">ENTERPRENEURSHIP</button>
+        </div>
+        <div class="ag-courses-item_date-box">
+        </div>
+    </a>
+</div>
+
+                
+          </div>
+      
+              
+          </div>
+           </div> 
+</body>
+</html>
